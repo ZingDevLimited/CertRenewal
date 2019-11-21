@@ -1,0 +1,22 @@
+{
+  "name": "cert-renewal",
+  "version": "1.0.0",
+  "description": "node application to generate certificate for a sub-domain or wildcard using Lets Encrypt",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^12.12.11",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "acme-client": "^3.2.1",
+    "cert-info": "^1.5.1"
+  }
+}
