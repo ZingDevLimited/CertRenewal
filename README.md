@@ -11,12 +11,25 @@ Azure CLI Installed.
 
 ## Usage
 
-Login to the Azure CaLI and select the subscription that the Azure DNS provider lives in for the domain you wish to create a certificate for.
+Login to the Azure CLI.
 
+````
 Note: the user account you login as must have permissions to create and delete record sets in the Azure DNS provider.
+````
 
-Update the values in index.ts for the certificate you wish to generate. Note: the application supports both staging mode, for testing, and production mode for generating a real certificate. 
+Update the values in index.ts for the certificate you wish to generate. 
 
-**Note:** it is recomended to use staging mode first to make sure your command is correct so you don't hit Lets Encrpyt's usage limits.
+The application supports generating certs for:
+ - root level
+ - any subdomain
+ - wildcard
 
-Run ``npm run start`` to launch the script. Certificate details will be written to the console.
+The application supports both staging mode, for testing, and production mode for generating a real certificate. 
+
+````
+Note: it is recomended to use staging mode first to make sure your command is correct so you don't hit Lets Encrpyt's usage limits.
+````
+
+Run ``npm run start`` to launch the script. 
+
+Certificate details will be written to the console.

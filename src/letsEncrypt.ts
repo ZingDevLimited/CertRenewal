@@ -150,14 +150,15 @@ export const GenerateCertAsync = async (inputs: ILetsEncryptGenerateCertParams):
 };
 
 const getExpiryEpochInMs = (pem: string, subject: string) => {
-    let expiresAt: number = 0;
-    const split = pem.split("\r\n\r\n");
-    for (let i = 0, l = split.length; i < l; i++) {
-        const info = ci.info(split[i]);
-        if (info.subject === subject) {
-            expiresAt = info.expiresAt;
-        }
-    }
+    // TODO: fixme.
+    const expiresAt: number = 0;
+    // const split = pem.split("\r\n\r\n");
+    // for (let i = 0, l = split.length; i < l; i++) {
+    //     // const info = ci.info(split[i]);
+    //     // if (info.subject === subject) {
+    //     //  expiresAt = info.expiresAt;
+    //     // }
+    // }
     return expiresAt;
 };
 
@@ -200,12 +201,12 @@ const convertToPfxAsync = (
                         throw new Error(`failed to read PFX. (${readPfxError.code}) - ${readPfxError.message}`);
                     }
                     // cleanup
-                    if (mode === "data") {
-                        fs.unlinkSync(pemKeyPath);
-                        fs.unlinkSync(pemCertPath);
-                    }
-                    fs.unlinkSync(pfxPath);
-                    fs.rmdirSync(folder);
+                    // if (mode === "data") {
+                    //     fs.unlinkSync(pemKeyPath);
+                    //     fs.unlinkSync(pemCertPath);
+                    // }
+                    // fs.unlinkSync(pfxPath);
+                    // fs.rmdirSync(folder);
 
                     resolve({
                         cert: pfxBuffer.toString("base64"),
