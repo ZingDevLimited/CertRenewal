@@ -32,6 +32,8 @@ The application supports both staging mode, for testing, and production mode for
 Note: it is recomended to use staging mode first to make sure your command is correct so you don't hit Lets Encrpyt's usage limits.
 ````
 
+Run ``npm i`` to install the dependancies.
+
 Run ``npm run start`` to launch the script.
 
 Certificate details will be written to the console.

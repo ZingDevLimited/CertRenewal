@@ -26,6 +26,7 @@ interface ICert {
     cert: string;
     privateKey: string;
     expiryDateEpochMs: number;
+    filePath: string;
 }
 
 export const GenerateCertAsync = async (inputs: ILetsEncryptGenerateCertParams): Promise<ICert> => {
@@ -140,6 +141,7 @@ export const GenerateCertAsync = async (inputs: ILetsEncryptGenerateCertParams):
             return {
                 cert,
                 expiryDateEpochMs: getExpiryEpochInMs(cert, cnName),
+                filePath: "",
                 privateKey: key.toString(),
             };
         case "pfx":
@@ -211,6 +213,7 @@ const convertToPfxAsync = (
                     resolve({
                         cert: pfxBuffer.toString("base64"),
                         expiryDateEpochMs,
+                        filePath: folder,
                         privateKey: pfxPassword,
                     });
                 });

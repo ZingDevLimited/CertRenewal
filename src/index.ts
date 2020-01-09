@@ -15,7 +15,8 @@ import { GenerateCertAsync } from "./letsEncrypt";
         notifyEmail: "",
         subDomain: "",
     });
-    console.log(`expiry MS Epoch: ${cert.expiryDateEpochMs}`);
-    console.log(`passkey: ${cert.privateKey}`);
     console.log(`cert:\n${cert.cert}\n`);
+    console.log(`passkey: ${cert.privateKey}`);
+    console.log(`expiry MS Epoch: ${cert.expiryDateEpochMs}`);
+    console.log(`directory: ${cert.filePath}`);
 })();
